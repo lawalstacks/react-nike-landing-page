@@ -1,4 +1,4 @@
-import Hero from './Hero';
+import Heroes from './Heroes';
 import PopularProducts from './PopularProducts';
 import Services from './Services';
 import SuperQuality from './SuperQuality';
@@ -8,7 +8,7 @@ import Subscribe from './Subscribe';
 import Footer from './Footer';
 
 export {
-	Hero,
+	Heroes,
 	PopularProducts,
 	Services,
 	SuperQuality,

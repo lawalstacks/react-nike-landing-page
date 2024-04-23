@@ -1,3 +1,4 @@
+import {useState} from "react";
 import Button from "../components/Button";
 
 import {arrowRight} from "../assets/icons";
@@ -5,7 +6,8 @@ import {arrowRight} from "../assets/icons";
 import {shoes,statistics} from "../constants";
 import {bigShoe1} from '../assets/images';
 import ShoeCard from "../components/ShoeCard";
-const Hero = () => {
+const Heroes = () => {
+	const [bigShoeImg,setBigShoeImg] = useState(bigShoe1)
     return(
         <section
         id = "home"
@@ -39,15 +41,15 @@ const Hero = () => {
 	    height={500}
 	    className="object-container relative z-10"
 	    />
-	    <div>
+	    <div className ="flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6">
 	    
 	    {shoes.map((shoe) =>
 	 (
 		 <div key={shoe}>
 		 <ShoeCard
 		 imgURL ={shoe}
-		 changeBigShoeImage ={() => {}}
-		 bigShoeImg=""/>
+		 changeBigShoeImage ={(shoe) => setBigShoeImg(shoe)}
+		 bigShoeImg={bigShoeImg}/>
 		 </div>
 	 ))}
 	    </div>
@@ -56,4 +58,4 @@ const Hero = () => {
     )
 }
 
-export default Hero;
+export default Heroes;
